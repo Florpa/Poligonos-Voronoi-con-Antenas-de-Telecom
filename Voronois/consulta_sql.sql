@@ -1,3 +1,11 @@
+
+1- Creo la columna geom en la tabla donde estan los datos de telecom
+alter table telecom.dispositivos_1111 add column geom geometry 
+2- Construyo la Geometria y actualizo ese campo
+update set telecom.dispositivos_1111 set geom = (ST_SetSRID(ST_MakePoint(uli_sitiorm_longitud , uli_sitiorm_latitud),4326))
+where geom is null
+3- Ejecuto la siguiente consulta
+
 with 
 antenas as (-- tabla Telecom con la columna geom construida previamente
     select st_transform(geom,5347) as geom, date, sum(n_lineas)*3.3 AS lineas,hora 
