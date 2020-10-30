@@ -9,7 +9,7 @@ where geom is null
 with 
 antenas as (-- tabla Telecom con la columna geom construida previamente
     select st_transform(geom,5347) as geom, date, sum(n_lineas)*3.3 AS lineas,hora 
-    from public.dispositivos_caba a -- nombre de la tabla con los datos de telecom.
+    from telecom.dispositivos_1111  a -- nombre de la tabla con los datos de telecom.
     where  hora= '0:30'  and date ='2020-10-20' 
     --El where es opcional, en caso que no se rellene lo hara para todos los dias/horas deseadas
     group by  geom, date,hora 
