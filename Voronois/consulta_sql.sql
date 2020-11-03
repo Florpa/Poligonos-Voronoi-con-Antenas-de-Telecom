@@ -1,15 +1,15 @@
 
 1- Creo la columna geom en la tabla donde estan los datos de telecom
-alter table telecom.dispositivos_1111 add column geom geometry 
+alter table public.dispositivos_caba add column geom geometry 
 2- Construyo la Geometria y actualizo ese campo
-update set telecom.dispositivos_1111 set geom = (ST_SetSRID(ST_MakePoint(uli_sitiorm_longitud , uli_sitiorm_latitud),4326))
+update set public.dispositivos_caba set geom = (ST_SetSRID(ST_MakePoint(uli_sitiorm_longitud , uli_sitiorm_latitud),4326))
 where geom is null
 3- Ejecuto la siguiente consulta
 
 with 
 antenas as (-- tabla Telecom con la columna geom construida previamente
     select st_transform(geom,5347) as geom, date, sum(n_lineas)*3.3 AS lineas,hora 
-    from telecom.dispositivos_1111  a -- nombre de la tabla con los datos de telecom.
+    from public.dispositivos_caba  a -- nombre de la tabla con los datos de telecom.
     where  hora= '0:30'  and date ='2020-10-20' 
     --El where es opcional, en caso que no se rellene lo hara para todos los dias/horas deseadas
     group by  geom, date,hora 
