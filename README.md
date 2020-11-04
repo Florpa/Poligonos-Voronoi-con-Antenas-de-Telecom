@@ -7,8 +7,8 @@ pero pero pero tal vez queres hacer algun procesamiento o prueba local y tener e
 de referencia no esta mal. Espero te sea útil.
 
 La consulta que construye los voronois a partir de las antenas esta comentada, pero por una 
-cuestion de coherencia y prolijidad te dejo un link a la documentación con mas contenido explicativo.(ง︡'-'︠)ง
-https://drive.google.com/file/d/19RUEIafe53cQqkW0Z0oteG1vlRaQ74Ut/view?usp=sharing
+cuestion de coherencia y prolijidad te dejo la documentacion adjunta tambien.(ง︡'-'︠)ง
+
 
 Cualquier duda que surja a partir de la lectura del repo podes escribirme a florsolpalacio@gmail.com
 (✿◠‿◠) 
